@@ -46,7 +46,6 @@ const validateCampground = (req, res, next) => {
     const msg = error.details.map((el) => el.message).join(",");
     throw new ExpressError(msg, 400);
   }
-  console.log(result);
 };
 
 app.get("/", (req, res) => {
@@ -69,6 +68,7 @@ app.get("/campgrounds/new", (req, res) => {
 
 app.post(
   "/campgrounds",
+  validateCampground,
   catchAsync(async (req, res, next) => {
     // if (!req.body.campground)
     //   throw new ExpressError("Invalid Campground Data", 400);
