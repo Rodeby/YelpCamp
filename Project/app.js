@@ -61,6 +61,7 @@ app.post(
     });
 
     campgroundSchema.validate(req.body);
+    console.log(result);
     const campground = new Campground(req.body.campground);
     await campground.save();
     res.redirect(`/campgrounds/${campground._id}`);
