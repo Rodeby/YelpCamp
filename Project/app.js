@@ -60,7 +60,10 @@ app.post(
       }).required(),
     });
 
-    const result = campgroundSchema.validate(req.body);
+    const { error } = campgroundSchema.validate(req.body);
+    if (error) {
+      throw new ExpressError(result.error.details, 400);
+    }
     console.log(result);
     const campground = new Campground(req.body.campground);
     await campground.save();
