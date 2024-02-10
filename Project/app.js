@@ -92,7 +92,7 @@ app.delete(
 );
 
 app.all("*", (req, res, next) => {
-  res.send("404!!");
+  next(new ExpressError("Page not found", 404));
 });
 
 app.use((err, req, res, next) => {
