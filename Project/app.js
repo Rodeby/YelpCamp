@@ -123,8 +123,6 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;
   if (!err.message) err.message = "Oh no, something went wrong!";
-  if (!req.body.campground.price) {
-  }
   res.status(statusCode).render("error", { err });
   // res.send("Oh boy, something went wrong");
 });
