@@ -90,9 +90,9 @@ app.delete(
   })
 );
 
-app.all("*".replace(req,res,next) =>{
-  res.send("404!!")
-})
+app.all("*", (req, res, next) => {
+  res.send("404!!");
+});
 
 app.use((err, req, res, next) => {
   res.send("Oh boy, something went wrong");
