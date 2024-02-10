@@ -66,7 +66,9 @@ app.delete("/campgrounds/:id", async (req, res) => {
   await Campground.findByIdAndDelete(id);
   res.redirect("/campgrounds");
 });
-
+app.use((err, req, res, next) => {
+  res.send("Oh boy, something went wrong");
+});
 app.listen(3000, () => {
   console.log("Serving on port 3000");
 });
