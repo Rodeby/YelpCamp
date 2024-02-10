@@ -63,7 +63,7 @@ app.post(
     const { error } = campgroundSchema.validate(req.body);
     if (error) {
       const msg = error.details.map((el) => el.message).join(",");
-      throw new ExpressError(result.error.details, 400);
+      throw new ExpressError(msg, 400);
     }
     console.log(result);
     const campground = new Campground(req.body.campground);
