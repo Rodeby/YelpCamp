@@ -107,7 +107,7 @@ app.delete(
   })
 );
 app.post(
-  "/campgrounds/:id/review",
+  "/campgrounds/:id/reviews",
   catchAsync(async (req, res) => {
     res.send("You made it!");
   })
