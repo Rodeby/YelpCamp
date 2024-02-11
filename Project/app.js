@@ -40,7 +40,9 @@ const validateCampground = (req, res, next) => {
     next();
   }
 };
-const validateReview = () => {};
+const validateReview = (req, res, next) => {
+  const { error } = reviewSchema.valid(req.body);
+};
 app.get("/", (req, res) => {
   res.render("home");
 });
