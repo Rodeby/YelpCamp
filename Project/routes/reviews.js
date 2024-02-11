@@ -28,3 +28,5 @@ router.delete(
     res.redirect(`/campgrounds/${id}`);
   })
 );
+
+module.exports = router;
