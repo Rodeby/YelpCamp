@@ -100,7 +100,9 @@ app.get(
 
 app.delete(
   "/camprgounds/:id/reviews/:reviewId",
-  catchAsync(async (req, res) => {})
+  catchAsync(async (req, res) => {
+    res.send("Delete me");
+  })
 );
 
 app.put(
