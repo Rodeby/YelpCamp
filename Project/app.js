@@ -115,6 +115,7 @@ app.post(
     campground.reviews.push(review);
     await review.save();
     await campground.save();
+    res.redirect(`campgrounds/${campgrounds._id}`);
   })
 );
 app.all("*", (req, res, next) => {
