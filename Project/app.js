@@ -98,6 +98,11 @@ app.get(
   })
 );
 
+app.delete(
+  "/camprgounds/:id/reviews/:id",
+  catchAsync(async (req, res) => {})
+);
+
 app.put(
   "/campgrounds/:id",
   validateCampground,
