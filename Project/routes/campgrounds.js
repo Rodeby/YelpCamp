@@ -3,7 +3,7 @@ const { model } = require("mongoose");
 const router = express.Router();
 
 router.get(
-  "/campgrounds",
+  "/",
   catchAsync(async (req, res) => {
     try {
       const campgrounds = await Campground.find({});
@@ -13,12 +13,12 @@ router.get(
     }
   })
 );
-router.get("/campgrounds/new", (req, res) => {
+router.get("/new", (req, res) => {
   res.render("campgrounds/new");
 });
 
 router.post(
-  "/campgrounds",
+  "/",
   validateCampground,
   catchAsync(async (req, res, next) => {
     // if (!req.body.campground)
@@ -30,7 +30,7 @@ router.post(
 );
 
 router.get(
-  "/campgrounds/:id",
+  "/:id",
   catchAsync(async (req, res) => {
     const campground = await Campground.findById(req.params.id).populate(
       "reviews"
@@ -41,7 +41,7 @@ router.get(
 );
 
 router.get(
-  "/campgrounds/:id/edit",
+  "/:id/edit",
   catchAsync(async (req, res) => {
     const campground = await Campground.findById(req.params.id);
     res.render("campgrounds/edit", { campground });
@@ -49,7 +49,7 @@ router.get(
 );
 
 router.delete(
-  "/campgrounds/:id/reviews/:reviewId",
+  "/:id/reviews/:reviewId",
   catchAsync(async (req, res) => {
     const { id, reviewId } = req.params;
     await Campground.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });

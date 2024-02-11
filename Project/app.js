@@ -10,6 +10,8 @@ const { error } = require("console");
 const { campgroundSchema, reviewSchema } = require("./schemas.js");
 const Review = require("./models/review.js");
 
+const campgrounds = require("./routes/campgrounds.js");
+
 mongoose.connect("mongodb://localhost:27017/yelp-camp", {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -49,6 +51,7 @@ const validateReview = (req, res, next) => {
     next();
   }
 };
+app.use("/campgrounds", campgrounds);
 app.get("/", (req, res) => {
   res.render("home");
 });
