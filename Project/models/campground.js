@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Review = require("/.review");
 
 const CampgroundSchema = new Schema({
   title: String,
@@ -16,6 +17,9 @@ const CampgroundSchema = new Schema({
 });
 
 CampgroundSchema.post("findOneAndDelete", async function (doc) {
+  if (doc) {
+  }
+
   console.log(doc);
 });
 
