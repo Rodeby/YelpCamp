@@ -85,7 +85,7 @@ app.get(
     const campground = await Campground.findById(req.params.id).populate(
       "reviews"
     );
-    console.log(campground);
+    // console.log(campground);
     res.render("campgrounds/show", { campground });
   })
 );
@@ -99,9 +99,13 @@ app.get(
 );
 
 app.delete(
-  "/camprgounds/:id/reviews/:reviewId",
+  "/campgrounds/:id/reviews/:reviewId",
   catchAsync(async (req, res) => {
-    res.send("Delete me");
+    // const { id, reviewId } = req.params;
+    // await Campground.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
+    // await Review.findByIdAndDelete(reviewId);
+    // res.redirect(`/campgrounds/${id}`);
+    res.send("Deleted");
   })
 );
 
