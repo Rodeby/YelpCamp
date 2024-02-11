@@ -109,7 +109,7 @@ app.delete(
 app.post(
   "/campgrounds/:id/reviews",
   catchAsync(async (req, res) => {
-    res.send("You made it!");
+    const campground = await Campground.findById;
   })
 );
 app.all("*", (req, res, next) => {
