@@ -7,7 +7,7 @@ const Campground = require("./models/campground");
 const catchAsync = require("./utils/catchAsync");
 const ExpressError = require("./utils/ExpressError");
 const { error } = require("console");
-const { campgroundSchema } = require("./schemas.js");
+const { campgroundSchema, reviewSchema } = require("./schemas.js");
 const Review = require("./models/review.js");
 
 mongoose.connect("mongodb://localhost:27017/yelp-camp", {
@@ -40,7 +40,7 @@ const validateCampground = (req, res, next) => {
     next();
   }
 };
-
+const validateReview = () => {};
 app.get("/", (req, res) => {
   res.render("home");
 });
