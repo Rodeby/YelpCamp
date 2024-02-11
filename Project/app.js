@@ -11,6 +11,7 @@ const { campgroundSchema, reviewSchema } = require("./schemas.js");
 const Review = require("./models/review.js");
 
 const campgrounds = require("./routes/campgrounds.js");
+const reviews = require("./routes/reviews.js");
 
 mongoose.connect("mongodb://localhost:27017/yelp-camp", {
   useNewUrlParser: true,
