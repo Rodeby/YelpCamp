@@ -8,6 +8,7 @@ const catchAsync = require("./utils/catchAsync");
 const ExpressError = require("./utils/ExpressError");
 const { error } = require("console");
 const { campgroundSchema } = require("./schemas.js");
+const Review = require;
 
 mongoose.connect("mongodb://localhost:27017/yelp-camp", {
   useNewUrlParser: true,
