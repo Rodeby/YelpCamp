@@ -1,6 +1,7 @@
 const express = require("express");
 const { model } = require("mongoose");
 const router = express.Router();
+const catchAsync = require("./utils/catchAsync");
 
 router.get(
   "/",
