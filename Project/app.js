@@ -99,7 +99,7 @@ app.get(
 );
 
 app.delete(
-  "/camprgounds/:id/reviews/:id",
+  "/camprgounds/:id/reviews/:reviewId",
   catchAsync(async (req, res) => {})
 );
 
