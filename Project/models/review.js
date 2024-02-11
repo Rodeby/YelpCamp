@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const campgroundSchema = 
+const reviewSchema = new Schema({
+  body: String,
+  rating: Number,
+});
