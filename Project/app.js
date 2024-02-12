@@ -10,6 +10,7 @@ const { error } = require("console");
 const { campgroundSchema, reviewSchema } = require("./schemas.js");
 const Review = require("./models/review.js");
 const session = require("express-session");
+const flash = require("connect-flash");
 
 const campgrounds = require("./routes/campgrounds.js");
 const reviews = require("./routes/reviews.js");
