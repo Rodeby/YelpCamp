@@ -49,6 +49,7 @@ const sessionConfig = {
   },
 };
 app.use(session(sessionConfig));
+app.use(flash());
 
 const validateCampground = (req, res, next) => {
   const { error } = campgroundSchema.validate(req.body);
