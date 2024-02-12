@@ -8,3 +8,5 @@ const UserSchema = new Schema({
     required: true,
   },
 });
+
+UserSchema.plugin(passportLocalMongoose);
