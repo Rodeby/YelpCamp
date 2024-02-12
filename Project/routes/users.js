@@ -6,7 +6,8 @@ router.get("/register", (req, res) => {
   res.render("users/register");
 });
 router.post("/register", async (req, res) => {
-  res.send(req.body);
+  const { email, username, password } = req.body;
+  new User({ email, username });
 });
 
 module.exports = router;
