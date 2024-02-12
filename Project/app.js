@@ -51,6 +51,10 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
+app.use((req, res, next) => {
+  res.locals.sucess = req.flash("success");
+});
+
 const validateCampground = (req, res, next) => {
   const { error } = campgroundSchema.validate(req.body);
   if (error) {
