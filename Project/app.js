@@ -12,6 +12,7 @@ const Review = require("./models/review.js");
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
+const LocalStrategy = require("passport-local");
 
 const campgrounds = require("./routes/campgrounds.js");
 const reviews = require("./routes/reviews.js");
