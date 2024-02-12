@@ -33,6 +33,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname, "public")));
 
 const validateCampground = (req, res, next) => {
   const { error } = campgroundSchema.validate(req.body);
@@ -52,9 +53,10 @@ const validateReview = (req, res, next) => {
     next();
   }
 };
+
 app.use("/campgrounds", campgrounds);
 app.use("/campgrounds/:id/reviews", reviews);
-app.use(express.static("public"));
+
 app.get("/", (req, res) => {
   res.render("home");
 });
