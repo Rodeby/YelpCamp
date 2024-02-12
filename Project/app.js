@@ -54,6 +54,7 @@ const validateReview = (req, res, next) => {
 };
 app.use("/campgrounds", campgrounds);
 app.use("/campgrounds/:id/reviews", reviews);
+app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.render("home");
 });
