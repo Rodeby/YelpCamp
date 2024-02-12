@@ -56,7 +56,7 @@ app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy());
+passport.use(new LocalStrategy(User.authenticate));
 
 app.use((req, res, next) => {
   res.locals.sucess = req.flash("success");
