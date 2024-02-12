@@ -5,6 +5,7 @@ const ExpressError = require("../utils/ExpressError");
 const Campground = require("../models/campground");
 const Review = require("../models/review.js");
 const { campgroundSchema, reviewSchema } = require("../schemas.js");
+const router = express.Router({ mergeParams: true });
 
 const validateReview = (req, res, next) => {
   const { error } = reviewSchema.validate(req.body);
