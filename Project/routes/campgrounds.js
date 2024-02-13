@@ -79,6 +79,7 @@ router.put(
     const campground = await Campground.findById(id);
     if (campground.author.equal(req.user_id)) {
       res.flash("error", "You don't have permission to do that");
+      return res.redirect(`/campgrounds/${id}`);
     }
     // const campground = await Campground.findByIdAndUpdate(id, {
     //   ...req.body.campground,
