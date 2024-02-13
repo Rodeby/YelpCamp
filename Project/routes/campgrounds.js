@@ -77,7 +77,7 @@ router.put(
   catchAsync(async (req, res) => {
     const { id } = req.params;
     const campground = await Campground.findById(id);
-    if (campground.author.equal(req.user_id)) {
+    if (campground.author.equals(req.user_id)) {
       res.flash("error", "You don't have permission to do that");
       return res.redirect(`/campgrounds/${id}`);
     }
