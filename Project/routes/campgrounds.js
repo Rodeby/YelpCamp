@@ -6,7 +6,7 @@ const campgrounds = require("../controllers/campgrounds");
 
 const Campground = require("../models/campground");
 
-router.get("/", catchAsync());
+router.get("/", catchAsync(campgrounds.index));
 
 router.get("/new", isLoggedIn, (req, res) => {
   res.render("campgrounds/new");
