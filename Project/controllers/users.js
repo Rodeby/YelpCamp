@@ -19,3 +19,7 @@ module.exports.register = async (req, res, next) => {
     res.redirect("register");
   }
 };
+
+module.exports.renderLogin = (req, res) => {
+  res.render("users/login");
+};
