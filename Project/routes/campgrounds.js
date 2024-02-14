@@ -17,7 +17,7 @@ router.post(
   catchAsync(campgrounds.createCampground)
 );
 
-router.get("/:id", catchAsync(module.exports.showCampground));
+router.get("/:id", catchAsync(campgrounds.showCampground));
 
 router.get(
   "/:id/edit",
