@@ -31,26 +31,14 @@ router.put(
   isLoggedIn,
   isAuthor,
   validateCampground,
-  catchAsync(async (req, res) => {
-    const { id } = req.params;
-    const campground = await Campground.findByIdAndUpdate(id, {
-      ...req.body.campground,
-    });
-    req.flash("success", "Successfully updated campground!");
-    res.redirect(`/campgrounds/${campground._id}`);
-  })
+  catchAsync(campgrounds.updateCampground)
 );
 
 router.delete(
   "/:id",
   isLoggedIn,
   isAuthor,
-  catchAsync(async (req, res) => {
-    const { id } = req.params;
-    await Campground.findByIdAndDelete(id);
-    req.flash("success", "Successfully deleted campground");
-    res.redirect("/campgrounds");
-  })
+  catchAsync(campgrounds.deleteCampground)
 );
 
 module.exports = router;
