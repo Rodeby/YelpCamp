@@ -17,12 +17,7 @@ router.post(
     failureFlash: true,
     failureRedirect: "/login",
   }),
-  (req, res) => {
-    req.flash("success", "welcome back!");
-    const redirectUrl = req.session.returnTo || "/campgrounds";
-    delete req.session.returnTo;
-    res.redirect(redirectUrl);
-  }
+  users.login
 );
 
 router.get("/logout", (req, res, next) => {
