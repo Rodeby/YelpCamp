@@ -30,3 +30,13 @@ module.exports.login = (req, res) => {
   delete req.session.returnTo;
   res.redirect(redirectUrl);
 };
+
+module.exports.renderLogout = (req, res, next) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    req.flash("success", "Goodbye!");
+    res.redirect("/campgrounds");
+  });
+};
