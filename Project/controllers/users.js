@@ -31,7 +31,7 @@ module.exports.login = (req, res) => {
   res.redirect(redirectUrl);
 };
 
-module.exports.renderLogout = (req, res, next) => {
+module.exports.logout = (req, res, next) => {
   req.logout(function (err) {
     if (err) {
       return next(err);
