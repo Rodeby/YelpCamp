@@ -19,7 +19,12 @@ router.post(
 
 router.get("/:id", catchAsync(campgrounds.showCampground));
 
-router.get("/:id/edit", isLoggedIn, isAuthor, catchAsync());
+router.get(
+  "/:id/edit",
+  isLoggedIn,
+  isAuthor,
+  catchAsync(campgrounds.renderEditForm)
+);
 
 router.put(
   "/:id",
