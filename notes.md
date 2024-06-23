@@ -17,3 +17,5 @@ app.use('/users', userRoutes);
 app.listen(3000, () => {
 console.log('Server is running on http://localhost:3000');
 });`
+
+router.use() means to use at the start to check things. acts as a middleware.
