@@ -21,3 +21,5 @@ console.log('Server is running on http://localhost:3000');
 router.use() means to use at the start to check things. acts as a middleware.
 
 Cookie parser
+
+Flash
