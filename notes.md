@@ -23,3 +23,5 @@ router.use() means to use at the start to check things. acts as a middleware.
 Cookie parser
 
 Flash
+
+'Flashes' a message before doing something else. Like when you're logging in, shows "successful log in" and then redirects. That's what it does, dumbass.
