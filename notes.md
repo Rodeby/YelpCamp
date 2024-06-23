@@ -24,4 +24,6 @@ Cookie parser
 
 Flash
 
-'Flashes' a message before doing something else. Like when you're logging in, shows "successful log in" and then redirects. That's what it does, dumbass.
+'Flashes' a message before doing something else. When refreshed the message dissapepars. Temporary message. That's what it does, dumbass.
+
+Dis
