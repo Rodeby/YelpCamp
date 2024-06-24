@@ -9,7 +9,7 @@ const UserSchema = new Schema({
     unique: true,
   },
 });
-
+//checking password
 UserSchema.plugin(passportLocalMongoose);
 //brb
 module.exports = mongoose.model("User", UserSchema);
