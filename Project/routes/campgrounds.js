@@ -19,6 +19,14 @@ router
     catchAsync(campgrounds.createCampground)
   );
 
+// router
+//   .route("/")
+//   .get(catchAsync(campgrounds.index))
+//   .post(upload.single("image"), (req, res) => {
+//     console.log(req.body, req.file);
+//     res.send("it worked");
+//   });
+
 router.get("/new", isLoggedIn, campgrounds.renderNewForm);
 
 router
