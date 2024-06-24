@@ -12,6 +12,7 @@ module.exports.renderNewForm = (req, res) => {
 
 module.exports.createCampground = async (req, res, next) => {
   const campground = new Campground(req.body.campground);
+  //create array with only the relevant information. e.g. original is fieldname: 'image',
   campground.images = req.files.map((f) => ({
     url: f.path,
     filename: f.filename,

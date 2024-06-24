@@ -22,7 +22,7 @@ router
 // router
 //   .route("/")
 //   .get(catchAsync(campgrounds.index))
-//   .post(upload.single("image"), (req, res) => {
+//   .post(upload.array("image"), (req, res) => {
 //     console.log(req.body, req.file);
 //     res.send("it worked");
 //   });
