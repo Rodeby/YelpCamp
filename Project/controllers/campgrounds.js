@@ -16,11 +16,11 @@ module.exports.renderNewForm = (req, res) => {
 module.exports.createCampground = async (req, res, next) => {
   const geoData = await geocoder
     .forwardGeocode({
-      query: "Yosemite, CA",
+      query: req.body.campground.location,
       limit: 1,
     })
     .send();
-  console.log(geoData);
+  console.log(geoData.body.features[0].geometry.coordinates);
   res.send("OK");
   // const campground = new Campground(req.body.campground);
   //create array with only the relevant information. e.g. original is fieldname: 'image',
