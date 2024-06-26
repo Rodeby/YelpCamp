@@ -42,7 +42,7 @@ const CampgroundSchema = new Schema({
   ],
 });
 CampgroundSchema.virtual("thumbnail").get(function () {
-  return this.url.replace("/upload", "/upload/w_200");
+  return "Popup text";
 });
 CampgroundSchema.post("findOneAndDelete", async function (doc) {
   if (doc) {
