@@ -14,3 +14,5 @@ new mapboxgl.Marker()
     )
   )
   .addTo(map);
+
+//back to black
